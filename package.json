@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --test tests/**/*.test.ts",
+    "test:junit": "javac -cp junit/junit-platform-console-standalone.jar -d junit/bin $(find junit/src -name '*.java') && java -jar junit/junit-platform-console-standalone.jar execute --class-path junit/bin --scan-class-path"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
